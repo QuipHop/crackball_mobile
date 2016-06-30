@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width, height=device-height" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <style>
+    @font-face {
+      font-family: 'brutal';
+      src: url('fonts/brutal.ttf');
+    }
+    @font-face {
+      font-family: 'spring';
+      src: url('fonts/spring_rage.ttf');
+    }
+    @font-face {
+      font-family: 'comeback';
+      src: url('fonts/comeback_of_the_damned.otf');
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        background: #000;
+    }
+    .hidden{
+        display: none;
+        visibility: hidden;
+    }
+    canvas{
+        margin: 0 auto;
+    }
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>CRACKBALL</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/lib/phaser.min.js"></script>
+    <script type="text/javascript" src="js/game_scene.js"></script>
+    <script type="text/javascript" src="js/menu_scene.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <div class="font_preload" >
+        <span style="font-family: 'brutal';"></span>
+        <span style="font-family: 'spring';"></span>
+        <span style="font-family: 'comeback';"></span>
+    </div>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>
